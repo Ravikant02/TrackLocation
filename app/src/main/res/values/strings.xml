@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Track Location</string>
+    <string name="action_settings">Settings</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="search">Search</string>
+
+    <string name="error_date">Please select date</string>
+    <string name="error_time">Please select time</string>
+    <string name="no_record">No record found!</string>
+</resources>
