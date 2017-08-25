@@ -10,6 +10,7 @@ import java.util.List;
 public class DBKeys {
 
     public static final String TEXT_TYPE = "text";
+    public static final String REAL_TYPE = "real";
 
     public static class LocationTable {
         public static final String LAT = "lat";
@@ -20,8 +21,8 @@ public class DBKeys {
 
     public static ArrayList<String> getLocationColumn(){
         ArrayList<String> list = new ArrayList<>();
-        list.add(LocationTable.LAT + ","+ TEXT_TYPE);
-        list.add(LocationTable.LONG + ","+ TEXT_TYPE);
+        list.add(LocationTable.LAT + ","+ REAL_TYPE);
+        list.add(LocationTable.LONG + ","+ REAL_TYPE);
         list.add(LocationTable.DATE + ","+ TEXT_TYPE);
         list.add(LocationTable.TIME + ","+ TEXT_TYPE);
         return list;

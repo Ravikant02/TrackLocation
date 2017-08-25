@@ -14,12 +14,15 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/edtDateLayout"
+        android:textColorHint="@color/text_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/edtDate"
             android:inputType="datetime"
             android:maxLines="1"
+            android:focusable="false"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/date" />
@@ -29,6 +32,7 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/edtTimeLayout"
         android:layout_below="@+id/edtDateLayout"
+        android:textColorHint="@color/text_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -37,7 +41,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:focusable="false"
+            android:clickable="true"
             android:hint="@string/time" />
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutLatLong"
+        android:baselineAligned="false"
+        android:visibility="gone"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/edtTimeLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtLatLayout"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:textColorHint="@color/text_hint"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edtLat"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="@string/latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtLongLayout"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:textColorHint="@color/text_hint"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edtLong"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="@string/longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/layoutLatLong"
+        android:id="@+id/edtAddressLayout"
+        android:visibility="gone"
+        android:textColorHint="@color/text_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtAddress"
+            android:focusable="false"
+            android:clickable="false"
+            android:hint="@string/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

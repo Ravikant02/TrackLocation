@@ -53,8 +53,8 @@ public class LocationService extends Service {
         if (location!=null) {
             // String address = gpsTrackerNew.getLocationName(location.getLatitude(), location.getLongitude());
             String[] dateTime = Utils.getTimeStamp();
-            TrackLocationDBHelper.getInstance().insertLocation(String.valueOf(location.getLatitude()),
-                    String.valueOf(location.getLongitude()), dateTime[0],dateTime[1]);
+            TrackLocationDBHelper.getInstance().insertLocation(location.getLatitude(),
+                    location.getLongitude(), dateTime[0],dateTime[1]);
             // Toast.makeText(this.context, address, Toast.LENGTH_LONG).show();
             // Log.e("LOCATION===", address);
             /*lat = location.getLatitude();

@@ -41,14 +41,14 @@ public class TrackLocationDBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insertLocation(String lat, String lng, String date, String time) {
+    public boolean insertLocation(double lat, double lng, String date, String time) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBKeys.LocationTable.LAT, lat);
         contentValues.put(DBKeys.LocationTable.LONG, lng);
-        contentValues.put(DBKeys.LocationTable.TIME, date);
-        contentValues.put(DBKeys.LocationTable.LAT, time);
+        contentValues.put(DBKeys.LocationTable.DATE, date);
+        contentValues.put(DBKeys.LocationTable.TIME, time);
         Cursor cursor = db.query(TABLE_LOCATIONS, new String[]{DBKeys.LocationTable.DATE}, DBKeys.LocationTable.TIME + "= ? and " + DBKeys.LocationTable.DATE + "= ?", new String[]{date, time}, null, null, null);
 
         long insert;
@@ -66,8 +66,8 @@ public class TrackLocationDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.query(TABLE_LOCATIONS, null, DBKeys.LocationTable.DATE+ "= ? and "+ DBKeys.LocationTable.TIME+"=? ", new String[]{date,time}, null, null, null);
         if(cursor.moveToFirst()) {
-            location = new Location(cursor.getString(cursor.getColumnIndex(DBKeys.LocationTable.LAT)),
-                    cursor.getString(cursor.getColumnIndex(DBKeys.LocationTable.LONG)),
+            location = new Location(cursor.getDouble(cursor.getColumnIndex(DBKeys.LocationTable.LAT)),
+                    cursor.getDouble(cursor.getColumnIndex(DBKeys.LocationTable.LONG)),
                     cursor.getString(cursor.getColumnIndex(DBKeys.LocationTable.DATE)),
                     cursor.getString(cursor.getColumnIndex(DBKeys.LocationTable.TIME)));
         }

@@ -1,5 +1,8 @@
 package com.example.abhijit.tracklocation.database;
 
+import android.content.Context;
+import android.util.Log;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +14,8 @@ import java.util.Date;
 public class Utils {
 
     public static String[] getTimeStamp() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        // SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         Date date = new Date();
         return dateFormat.format(date).split(" ");
     }
